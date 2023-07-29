@@ -6,7 +6,14 @@ const { Client } = require('pg')
 const nodemailer = require('nodemailer')
 
 app.use(express.json())
-app.use(cors())
+const corsOpts = {
+    origin: '*',
+    allowedHeaders: [
+      'Content-Type',
+    ],
+  };
+  
+app.use(cors(corsOpts))
 app.use(express.static('build'))
 
 const client = new Client({
