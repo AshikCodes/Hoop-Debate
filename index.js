@@ -16,13 +16,21 @@ const corsOpts = {
 app.use(cors(corsOpts))
 app.use(express.static('build'))
 
+// const client = new Client({
+//     host:'localhost',
+//     user:'postgres',
+//     port: 5432,
+//     password: process.env.DATABASE_PASS,
+//     database: process.env.DATABASE
+// }) 
 const client = new Client({
-    host:'localhost',
+    host:'dpg-cj2f4s5iuie55pnmk7hg-a',
     user:'postgres',
     port: 5432,
     password: process.env.DATABASE_PASS,
     database: process.env.DATABASE
 }) 
+
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
