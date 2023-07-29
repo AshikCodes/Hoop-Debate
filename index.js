@@ -24,11 +24,19 @@ app.use(express.static('build'))
 //     database: process.env.DATABASE
 // }) 
 
+// const client = new Client({
+//     host: process.env.DATABASE_HOST,
+//     user: process.env.DATABASE_USER,
+//     port: 5432,
+//     password: process.env.NEON_PASS,
+//     database: 'neondb'
+// }) 
+
 const client = new Client({
-    host: process.env.DATABASE_HOST,
-    user: process.env.DATABASE_USER,
+    host: 'ep-cold-dawn-72127729.us-east-2.aws.neon.tech',
+    user: 'AshikCodes',
     port: 5432,
-    password: process.env.NEON_PASS,
+    password: 'PGtdoRgj60rL',
     database: 'neondb'
 }) 
 
