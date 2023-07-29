@@ -16,14 +16,21 @@ const corsOpts = {
 app.use(cors(corsOpts))
 app.use(express.static('build'))
 
-const client = new Client({
-    host:'localhost',
-    user:'postgres',
-    port: 5432,
-    password: process.env.DATABASE_PASS,
-    database: process.env.DATABASE
-}) 
+// const client = new Client({
+//     host:'localhost',
+//     user:'AshikCodes',
+//     port: 5432,
+//     password: process.env.DATABASE_PASS,
+//     database: process.env.DATABASE
+// }) 
 
+const client = new Client({
+    host: process.env.DATABASE_HOST,
+    user: process.env.DATABASE_USER,
+    port: 5432,
+    password: process.env.NEON_PASS,
+    database: 'neondb'
+}) 
 
 
 const transporter = nodemailer.createTransport({
