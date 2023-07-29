@@ -37,7 +37,10 @@ const client = new Client({
     user: 'AshikCodes',
     port: 5432,
     password: 'PGtdoRgj60rL',
-    database: 'neondb'
+    database: 'neondb',
+    ssl: {
+        rejectUnauthorized: false, // Set this to false for self-signed certificates or when using SSL with invalid certificates. Do not use in production.
+    }
 }) 
 
 
