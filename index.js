@@ -24,24 +24,16 @@ app.use(express.static('build'))
 //     database: process.env.DATABASE
 // }) 
 
-// const client = new Client({
-//     host: process.env.DATABASE_HOST,
-//     user: process.env.DATABASE_USER,
-//     port: 5432,
-//     password: process.env.NEON_PASS,
-//     database: 'neondb'
-// }) 
-
 const client = new Client({
-    host: 'ep-cold-dawn-72127729.us-east-2.aws.neon.tech',
-    user: 'AshikCodes',
+    host: process.env.DATABASE_HOST,
+    user: process.env.DATABASE_USER,
     port: 5432,
-    password: 'PGtdoRgj60rL',
+    password: process.env.NEON_PASS,
     database: 'neondb',
     ssl: {
         rejectUnauthorized: false, // Set this to false for self-signed certificates or when using SSL with invalid certificates. Do not use in production.
     }
-}) 
+})
 
 
 const transporter = nodemailer.createTransport({
