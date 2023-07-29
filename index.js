@@ -70,12 +70,20 @@ app.get('/', (req,res) => {
 })
 
 app.get('/get_wyr', async (req, res) => {
-    let result = await client.query(`SELECT wyr.wyr_id, wyr.wyr_question, wyr.wyr_option1, wyr.wyr_option2, stats.wyr_option1_clicks, stats.wyr_option2_clicks 
-                                     FROM wyr
-                                     FULL JOIN stats
-                                     ON wyr.wyr_id = stats.wyr_id
-                                     ORDER BY random()`)
-    res.json(result.rows)     
+    try {
+        let result = await client.query(`SELECT wyr.wyr_id, wyr.wyr_question, wyr.wyr_option1, wyr.wyr_option2, stats.wyr_option1_clicks, stats.wyr_option2_clicks 
+        FROM wyr
+        FULL JOIN stats
+        ON wyr.wyr_id = stats.wyr_id
+        ORDER BY random()`)
+        res.json(result.rows)   
+    }
+    catch(err){
+        res.write('<html><head></head><body>');
+        res.write('<p>Write your HTML content here</p>');
+        res.end('</body></html>');
+    }
+      
 })
 
 app.post(`/add_click`, async (req,res) => {
