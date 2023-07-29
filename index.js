@@ -7,6 +7,7 @@ const nodemailer = require('nodemailer')
 
 app.use(express.json())
 app.use(cors())
+app.use(express.static('build'))
 
 const client = new Client({
     host:'localhost',
