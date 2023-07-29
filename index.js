@@ -29,7 +29,7 @@ const sendIdeaEmail = (name, idea) => {
     try {
         transporter.sendMail({
             from: process.env.EMAIL,
-            to: 'icannotmiss7@gmail.com',
+            to: process.env.PERSONAL_EMAIL,
             subject: `New Idea from HoopDebate - ${name}`,
             html: `<div style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.5;">
                     <p>Hello Ashik!</p>
