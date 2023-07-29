@@ -25,7 +25,7 @@ app.use(express.static('build'))
 // }) 
 const client = new Client({
     host:'dpg-cj2f4s5iuie55pnmk7hg-a',
-    user:'postgres',
+    user:'hoopdebate_user',
     port: 5432,
     password: process.env.DATABASE_PASS,
     database: process.env.DATABASE
