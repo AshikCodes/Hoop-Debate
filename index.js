@@ -24,23 +24,23 @@ app.use(express.static('build'))
 //     database: process.env.DATABASE
 // }) 
 
-// const client = new Client({
-//     host: process.env.DATABASE_HOST,
-//     user: process.env.DATABASE_USER,
-//     port: 5432,
-//     password: process.env.NEON_PASS,
-//     database: 'neondb',
-//     ssl: {
-//         rejectUnauthorized: false, // Set this to false for self-signed certificates or when using SSL with invalid certificates. Do not use in production.
-//     }
-// })
 const client = new Client({
-    host: process.env.ELEPHANT_HOST,
-    user: process.env.ELEPHANT_USER,
-    // port: 5432,
-    password: process.env.ELEPHANT_PASS,
-    database: process.env.ELEPHANT_DB,
+    host: process.env.DATABASE_HOST,
+    user: process.env.DATABASE_USER,
+    port: 5432,
+    password: process.env.NEON_PASS,
+    database: 'neondb',
+    ssl: {
+        rejectUnauthorized: false, // Set this to false for self-signed certificates or when using SSL with invalid certificates. Do not use in production.
+    }
 })
+// const client = new Client({
+//     host: process.env.ELEPHANT_HOST,
+//     user: process.env.ELEPHANT_USER,
+//     // port: 5432,
+//     password: process.env.ELEPHANT_PASS,
+//     database: process.env.ELEPHANT_DB,
+// })
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
