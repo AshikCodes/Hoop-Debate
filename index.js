@@ -35,7 +35,6 @@ const client = new Client({
     }
 })
 
-
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     secure: true,
