@@ -37,7 +37,7 @@ app.use(express.static('build'))
 const client = new Client({
     host: process.env.ELEPHANT_HOST,
     user: process.env.ELEPHANT_USER,
-    port: 5432,
+    // port: 5432,
     password: process.env.ELEPHANT_PASS,
     database: process.env.ELEPHANT_DB,
 })
