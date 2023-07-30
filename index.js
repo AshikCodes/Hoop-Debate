@@ -75,13 +75,14 @@ const sendIdeaEmail = (name, idea) => {
 console.log('connecting to postgreSQL database...')
 client.connect()
     .then(() => {
+        
+        console.log('Connected to DB!')
+    })
+    .catch((err) => {
         console.log('ELEPHANT_HOST:', process.env.ELEPHANT_HOST);
         console.log('ELEPHANT_USER:', process.env.ELEPHANT_USER);
         console.log('ELEPHANT_PASS:', process.env.ELEPHANT_PASS);
         console.log('ELEPHANT_DB:', process.env.ELEPHANT_DB);
-        console.log('Connected to DB!')
-    })
-    .catch((err) => {
         console.log(`Error connecting to DB: ${err}`)
     })
 
