@@ -123,9 +123,9 @@ async function testConnection() {
 
 testConnection()
 
-app.get('/', (req,res) => {
-    res.send('SUCCESS YESSIR')
-})
+// app.get('/', (req,res) => {
+//     res.send('SUCCESS YESSIR')
+// })
 
 // app.get('/get_wyr', async (req, res) => {
     // try {
