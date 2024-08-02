@@ -21,7 +21,7 @@ const corsOpts = {
   };
   
 app.use(cors(corsOpts))
-app.use(express.static('build'))
+// app.use(express.static('build'))
 
 // const client = new Client({
 //     host:'localhost',
