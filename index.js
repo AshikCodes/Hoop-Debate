@@ -19,6 +19,7 @@ const corsOpts = {
       'Content-Type',
     ],
   };
+//   
   
 app.use(cors(corsOpts))
 app.use(express.static('build'))
